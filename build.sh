@@ -1,3 +1,3 @@
 #!/bin/sh
 
-uglifyjs runthen.js -mco dist/runthen.min.js
+uglifyjs waiter.js -mco dist/waiter.min.js

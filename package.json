@@ -1,16 +1,16 @@
 {
-  "_from": "runthen.js",
-  "_id": "runthen.js@0.0.2",
+  "_from": "waiter.js",
+  "_id": "waiter.js@0.0.2",
   "_inBundle": false,
   "_integrity": "sha512-Z3KLeKhdqQSKneyzfl6LsqOQarwVLE9gNWN0sg30TtP+jvnTIbj1n/cqh4FCKrfbo2U1G8rvzsq38xLcdyNREg==",
-  "_location": "/runthen.js",
+  "_location": "/waiter.js",
   "_phantomChildren": {},
   "_requested": {
     "type": "tag",
     "registry": true,
-    "raw": "runthen.js",
-    "name": "runthen.js",
-    "escapedName": "runthen.js",
+    "raw": "waiter.js",
+    "name": "waiter.js",
+    "escapedName": "waiter.js",
     "rawSpec": "",
     "saveSpec": null,
     "fetchSpec": "latest"
@@ -18,15 +18,15 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/runthen.js/-/runthen.js-0.0.2.tgz",
+  "_resolved": "https://registry.npmjs.org/waiter.js/-/waiter.js-0.0.2.tgz",
   "_shasum": "6e0eb979de66004f3a204799037d59ab6cb8b147",
-  "_spec": "runthen.js",
+  "_spec": "waiter.js",
   "_where": "/storage/emulated/0/urain39.github.io",
   "author": {
     "name": "urain39"
   },
   "bugs": {
-    "url": "https://github.com/urain39/runthen.js/issues"
+    "url": "https://github.com/urain39/waiter.js/issues"
   },
   "bundleDependencies": false,
   "dependencies": {},
@@ -40,7 +40,7 @@
   "directories": {
     "test": "tests"
   },
-  "homepage": "https://github.com/urain39/runthen.js#readme",
+  "homepage": "https://github.com/urain39/waiter.js#readme",
   "keywords": [
     "Promise",
     "Promise-like",
@@ -48,11 +48,11 @@
     "ES3"
   ],
   "license": "MIT",
-  "main": "src/runthen.js",
-  "name": "runthen.js",
+  "main": "src/waiter.js",
+  "name": "waiter.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/urain39/runthen.js.git"
+    "url": "git+https://github.com/urain39/waiter.js.git"
   },
   "version": "0.0.2"
 }

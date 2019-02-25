@@ -19,7 +19,7 @@
       ST_RESOLVED = 1,
       ST_REJECTED = 2;
 
-  function Runthen(executor) {
+  function Waiter(executor) {
     var self = this;
     self._state = ST_PENDING;
     self._executor = executor;
@@ -27,25 +27,25 @@
     self._onCatch = null;
   }
 
-  Runthen.prototype.then = function (resolve) {
+  Waiter.prototype.then = function (resolve) {
     var self = this;
     self._resolveList.push(resolve);
     return self;
   };
 
-  Runthen.prototype.catch = function (onCatch) {
+  Waiter.prototype.catch = function (onCatch) {
     var self = this;
     self._onCatch = onCatch;
     return self;
   };
 
-  Runthen.prototype.destroy = function () {
+  Waiter.prototype.destroy = function () {
     var self = this;
     self._resolveList.length = 0;
     self._onCatch = null;
   };
 
-  Runthen.prototype.done = function () {
+  Waiter.prototype.done = function () {
     var self = this,
         context = null,
         resolve = null,
@@ -63,10 +63,10 @@
         // Then call it one by one with context.
         try {
           context = resolve(context);
-        } catch (err) {
+        } catch (e) {
           onCatch = self._onCatch;
           if (typeof onCatch === "function") {
-            onCatch(err);
+            onCatch(e);
           }
           // Mark state is rejected.
           self._state = ST_REJECTED;
@@ -86,14 +86,14 @@
   };
 
   // Syntactic Sugar?
-  Runthen.resolve = function (value) {
-    return new Runthen(function (resolve) {
+  Waiter.resolve = function (value) {
+    return new Waiter(function (resolve) {
       resolve(value);
     });
   };
 
-  global.Runthen = Runthen;
+  global.Waiter = Waiter;
   if (typeof exports === "object") {
-    exports.Runthen = Runthen;
+    exports.Waiter = Waiter;
   }
 })(this);

@@ -1,7 +1,7 @@
-var { Runthen } = require("../runthen.js");
+var { Waiter } = require("../waiter.js");
 
 function sleep(ms) {
-  return new Runthen(function (resolve) {
+  return new Waiter(function (resolve) {
     setTimeout(function () {
       resolve(null);
     }, ms);
