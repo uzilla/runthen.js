@@ -58,14 +58,15 @@
       context = value;
       // Handle Promise-like then-chains.
       while (self._resolveList.length > 0) {
+        // Get the next resolve callback.
         resolve = self._resolveList.shift();
-        // Call callbacks one by one.
+        // Then call it one by one with context.
         try {
           context = resolve(context);
-        } catch (error) {
+        } catch (err) {
           onCatch = self._onCatch;
           if (typeof onCatch === "function") {
-            onCatch(error);
+            onCatch(err);
           }
           // Mark state is rejected.
           self._state = ST_REJECTED;
@@ -74,7 +75,7 @@
       }
       // Whatever, destroy it first.
       self.destroy();
-      if (self._state === ST_REJECTED) {
+      if (self._state !== ST_PENDING) {
         return; // State changed.
       }
       // Mark state is resolved.
@@ -92,4 +93,7 @@
   };
 
   global.Runthen = Runthen;
+  if (typeof exports === "object") {
+    exports.Runthen = Runthen;
+  }
 })(this);
