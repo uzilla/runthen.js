@@ -45,7 +45,9 @@
     self._onCatch = null;
   };
 
-  Waiter.prototype.done = function () {
+  Waiter.prototype.run   =
+  Waiter.prototype.done  =
+  Waiter.prototype.start = function () {
     var self = this,
         context = null,
         resolve = null,
