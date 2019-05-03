@@ -15,16 +15,16 @@
  */
 
 (function (global) {
-  var ST_PENDING = 0,
+  var ST_PENDING  = 0,
       ST_RESOLVED = 1,
       ST_REJECTED = 2;
 
   function Waiter(executor) {
     var self = this;
-    self._state = ST_PENDING;
-    self._executor = executor;
+    self._state       = ST_PENDING;
+    self._executor    = executor;
     self._resolveList = [];
-    self._onCatch = null;
+    self._onCatch     = null;
   }
 
   Waiter.prototype.then = function (resolve) {
